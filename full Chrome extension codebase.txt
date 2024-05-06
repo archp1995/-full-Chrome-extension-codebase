@@ -1,0 +1,76 @@
+#JSON
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Chat Filter",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
+#HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WhatsApp Chat Filter Extension</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <h1>WhatsApp Chat Filter</h1>
+  <button id="filterAll">Filter All</button>
+  <button id="filterUnread">Filter Unread</button>
+  <button id="filterAwaitingReply">Filter Awaiting Reply</button>
+  <button id="filterNeedsReply">Filter Needs Reply</button>
+</body>
+<script src="popup.js"></script>
+</html>
+
+#JavaScript (popup.js)
+
+document.getElementById('filterAll').addEventListener('click', filterAllChats);
+document.getElementById('filterUnread').addEventListener('click', filterUnreadChats);
+document.getElementById('filterAwaitingReply').addEventListener('click', filterAwaitingReplyChats);
+document.getElementById('filterNeedsReply').addEventListener('click', filterNeedsReplyChats);
+
+function filterAllChats() {
+  // Implement logic to filter all chats
+}
+
+function filterUnreadChats() {
+  // Implement logic to filter unread chats
+}
+
+function filterAwaitingReplyChats() {
+  // Implement logic to filter chats awaiting reply
+}
+
+function filterNeedsReplyChats() {
+  // Implement logic to filter chats needing reply
+}
+
+#CSS (popup.css)
+body {
+  width: 200px;
+  padding: 10px;
+}
+
+button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
